@@ -15,6 +15,12 @@ import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('Discover');
+  const [selectedEvent, setSelectedEvent] = useState<any>(null);
+
+  const handleBook = (event: any) => {
+    setSelectedEvent(event);
+    setCurrentPage('Tickets');
+  };
 
   const renderPage = () => {
     return (
@@ -29,17 +35,17 @@ export default function App() {
           {(() => {
             switch (currentPage) {
               case 'Discover':
-                return <Discover />;
+                return <Discover onBook={handleBook} />;
               case 'Search':
-                return <SearchPage />;
+                return <SearchPage onBook={handleBook} />;
               case 'Journal':
                 return <Journal />;
               case 'Calendar':
-                return <SearchPage />;
+                return <SearchPage onBook={handleBook} />;
               case 'Tickets':
-                return <Tickets />;
+                return <Tickets event={selectedEvent} onBack={() => setCurrentPage('Discover')} />;
               default:
-                return <Discover />;
+                return <Discover onBook={handleBook} />;
             }
           })()}
         </motion.div>
@@ -47,28 +53,18 @@ export default function App() {
     );
   };
 
-  // The Ticket selection page has a specific simplified layout
+  // The Ticket selection page replaces the whole layout for focus
   if (currentPage === 'Tickets') {
-    return <Tickets />;
+    return <Tickets event={selectedEvent} onBack={() => setCurrentPage('Discover')} />;
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col selection:bg-secondary/20">
       <Navbar currentPage={currentPage} onPageChange={setCurrentPage} />
       <main className="flex-grow">
         {renderPage()}
       </main>
       <Footer />
-
-      {/* Quick Access to Tickets (for demo purposes) */}
-      <div className="fixed bottom-4 right-4 z-50">
-        <button 
-          onClick={() => setCurrentPage('Tickets')}
-          className="bg-[#00416B] text-white text-[10px] font-bold px-4 py-2 rounded-full shadow-lg hover:bg-secondary transition-all"
-        >
-          DEMO: BOOK TICKETS
-        </button>
-      </div>
     </div>
   );
 }

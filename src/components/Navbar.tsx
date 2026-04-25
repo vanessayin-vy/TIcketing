@@ -13,24 +13,31 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
     <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-10 py-4 flex justify-between items-center">
         <div 
-          className="text-xl font-semibold tracking-tight text-[#00416B] font-serif cursor-pointer"
+          className="text-2xl font-bold tracking-tighter text-primary font-sans cursor-pointer group"
           onClick={() => onPageChange('Discover')}
         >
-          Cultural Concierge
+          Ticketing<span className="text-secondary group-hover:text-primary transition-colors">SG</span>
         </div>
         
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-10">
           {navItems.map((item) => (
             <button
               key={item}
               onClick={() => onPageChange(item)}
-              className={`pb-1 transition-all duration-300 ${
+              className={`relative py-1 text-sm font-medium tracking-wide transition-all duration-300 ${
                 currentPage === item 
-                  ? 'text-secondary border-b-2 border-secondary' 
-                  : 'text-gray-500 hover:text-primary'
+                  ? 'text-primary' 
+                  : 'text-gray-400 hover:text-primary'
               }`}
             >
               {item}
+              {currentPage === item && (
+                <motion.div 
+                  layoutId="navUnderline"
+                  className="absolute -bottom-1 left-0 right-0 h-0.5 bg-secondary"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
             </button>
           ))}
         </nav>
