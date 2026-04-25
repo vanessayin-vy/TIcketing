@@ -20,10 +20,10 @@ export default function Journal() {
         <div className="space-y-6">
           <div className="flex items-center gap-3">
             <span className="bg-secondary/10 text-secondary text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-[0.15em]">
-              Editorial
+              Perspectives
             </span>
             <div className="h-px w-8 bg-gray-200" />
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Internal Draft</span>
+            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Editorial Insight</span>
           </div>
           <h1 className="font-serif text-5xl md:text-6xl text-primary leading-[0.9] tracking-tight">Swan Lake: The Director's Cut</h1>
           <p className="text-gray-500 text-lg max-w-xl leading-relaxed">

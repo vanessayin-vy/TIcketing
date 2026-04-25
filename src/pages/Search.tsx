@@ -50,10 +50,10 @@ export default function SearchPage({ onBook }: SearchPageProps) {
             >
               <ul className="py-4">
                 <li className="px-8 py-4 hover:bg-gray-50 cursor-pointer flex items-center gap-4 transition-colors">
-                  <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-400 text-xs font-bold uppercase tracking-widest">SF</div>
+                  <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-400 text-xs font-bold uppercase tracking-widest">SI</div>
                   <div>
-                    <p className="text-gray-800 font-bold"><strong>Symphony</strong> in the Park Notes</p>
-                    <p className="text-gray-400 text-[10px] uppercase font-bold tracking-widest">Journal Entry • Oct 2024</p>
+                    <p className="text-gray-800 font-bold"><strong>Symphony</strong> in the Park Insights</p>
+                    <p className="text-gray-400 text-[10px] uppercase font-bold tracking-widest">Editorial Insight • Oct 2024</p>
                   </div>
                 </li>
                 <li className="px-8 py-4 hover:bg-gray-50 cursor-pointer flex items-center gap-4 transition-colors border-t border-gray-50">

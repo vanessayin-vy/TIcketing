@@ -7,7 +7,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
-  const navItems = ['Discover', 'Calendar', 'Venues', 'Journal'];
+  const navItems = ['Discover', 'Calendar', 'Venues', 'Insights'];
 
   return (
     <header className="bg-white border-b border-gray-100 sticky top-0 z-50">

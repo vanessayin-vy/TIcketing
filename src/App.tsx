@@ -38,7 +38,7 @@ export default function App() {
                 return <Discover onBook={handleBook} />;
               case 'Search':
                 return <SearchPage onBook={handleBook} />;
-              case 'Journal':
+              case 'Insights':
                 return <Journal />;
               case 'Calendar':
                 return <SearchPage onBook={handleBook} />;
